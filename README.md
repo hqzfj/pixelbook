@@ -1,1 +1,1 @@
-# pixbook-mint
+# pixelbook-mint
