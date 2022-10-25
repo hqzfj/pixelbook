@@ -4,5 +4,7 @@
 # 从谷歌chrome系统刷机到linux-mint系统
 1.在解除保护后（保护螺丝拧下来，拔掉电池线，再装上，螺丝拧回）， ChromeOS启用开发者模式后，
 进入 ChromeOS ，按 Ctrl + Alt + T 进入终端，输入shell 进入 Linux 命令行，执行以下命令：
-cd ~
+
+cd ~ 
+
 curl -LO https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
