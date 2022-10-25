@@ -19,4 +19,5 @@ cd ~
 curl -LO https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
 
 输入Restore Stock Firmware这项前的相应序号，然后会提示你插入装有pixelbook谷歌bios之前备份的U盘，选择备份文件名恢复，恢复原谷歌系统需要制作一个chromeos恢复盘，按相关说明恢复即可。
+
 3.到mint官网下载最新镜像文件，制作引导启动U盘，插入pixelbook后，重启电脑，启动后按esc键进入刚刚刷好的bios，选择从镜像U盘启动，按照官方说明步骤安装即可。
