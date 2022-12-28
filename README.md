@@ -70,7 +70,7 @@
                       
                       sudo pacman -S xorg-xinput -y
                       
- ### 非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复：
+ ##### 非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复：
    
   直接下载pixelbook-alsa_1.0-1_amd64.deb软件包并使用sudo dpkg -i命令安装即可。
    
