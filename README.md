@@ -29,7 +29,7 @@ curl -LO https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
     3）.触摸板-------------正常
     4）.键盘背光-----------正常
 1. 从 https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin放置在当前用户根目录下
-2. git clone https://github.com/hqzfj/pixelbook，确保文件夹名为pixelbook
+2. git clone https://github.com/hqzfj/pixelbook ，确保文件夹名为pixelbook
 3. chmod +x ./pixelbook/install.sh
 4. ./pixelbook/install.sh运行脚本
 #脚本结构选择项
@@ -42,20 +42,31 @@ curl -LO https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
 #非manjaro发行版的需要注意的地方
 1.音频修复时需要安装kpartx软件用于映射挂载谷歌恢复镜像文件和安装xinput软件用于监控输入设备
  audio.sh脚本文件运行时做了判断，manjaro系统为：
+ 
                       sudo pacman -S multipath-tools -y
+                      
                       sudo pacman -S xorg-xinput -y
    非manjaro系统：
+   
                       sudo apt-get -y install kpartx
+                      
                       sudo apt-get -y install xinput
+                      
    以上非manjaro系统软件包名若不正确请查询并修改上述两个软件包的安装命令
    
  2.热键映射中的屏幕背光需要安装dracut软件，keyboard-brightness.sh脚本文件运行时做了判断，manjaro系统为：
+ 
                       sudo pacman -S dracut -y
+                      
    非manjaro系统：
+   
                       sudo apt-get -y install dracut
+                      
    以上非manjaro系统软件包名dracut若不正确请查询并修改dracut软件包的安装命令
 
  3.热键映射修复完成后请手动在系统设置中设置调节键盘背光的自定义快捷组合键
+ 
    1）自定义键盘背光调亮快捷组合键：‘谷歌助理键（最底排左数第2个按键）’+‘亮度调亮键（第1排左数第7个按键）’，快捷命令‘eve-keyboard-brightness.sh +25’，表示每摁一次组合键，键盘增加亮度25%，直至100%为止。
+   
    2）自定义键盘背光调亮快捷组合键：‘谷歌助理键（最底排左数第2个按键）’+‘亮度调暗键（第1排左数第6个按键）’，快捷命令‘eve-keyboard-brightness.sh -25’，表示每摁一次组合键，键盘减少亮度25%，直至0%关闭为止。
    
