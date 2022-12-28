@@ -10,9 +10,13 @@ echo "安装kpartx用于映射挂载谷歌恢复镜像文件"
 if [ $ID = "manjaro" ] || [ $ID = "Manjaro" ] || [ $ID = "archlinux" ] || [ $ID = "arch linux" ]; then
 sudo pacman -S multipath-tools -y
 sudo pacman -S xorg-xinput -y
+sudo pacman -S pulseaudio -y
+sudo pacman -S pulseaudio-alsa pulseaudio-jack
 else
 sudo apt-get -y install kpartx
 sudo apt-get -y install xinput
+sudo apt-get -y install pulseaudio
+sudo apt-get -y install pulseaudio-alsa pulseaudio-jack
 fi
 
 }
