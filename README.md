@@ -39,6 +39,7 @@
        git clone https://github.com/hqzfj/pixelbook 
 
 确保文件夹名为pixelbook
+
 3. 给予运行权限
 
        chmod +x ./pixelbook/install.sh
