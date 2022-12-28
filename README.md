@@ -22,16 +22,27 @@ curl -LO https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
 3.到manjaro官网下载最新镜像文件，制作引导启动U盘，插入pixelbook后，重启电脑，启动后按esc键进入刚刚刷好的bios，选择从镜像U盘启动，按照官方说明步骤安装即可。
 
 #适用于pixelbook安装manjaro的修复脚本，也可能适用于ubuntu/debian/mint/deepin/fedora等发行版本
-此脚本只在manjaro发行版上测试成功，不保证其他发行版能够成功修复，不过应该问题不大。此脚本根据jmontleon的gihub发布页(https://github.com/jmontleon/pixelbook-fedora)及yusefnapora的gihub发布页(https://github.com/yusefnapora/pixelbook-linux)的方法步骤编写。因非计算机专业，能力有限，此脚本只为方便本人在其他发行版修复，未对以上两位提供的代码做任何功能、技术上的修改，感谢jmontleon和yusefnapora对pixelbook使用linux所作出的努力和杰出贡献！"
+此脚本只在manjaro发行版上测试成功，不保证其他发行版能够成功修复，不过应该问题不大。此脚本根据jmontleon的gihub发布页(https://github.com/jmontleon/pixelbook-fedora )及yusefnapora的gihub发布页(https://github.com/yusefnapora/pixelbook-linux )的方法步骤编写。因非计算机专业，能力有限，此脚本只为方便本人在其他发行版修复，未对以上两位提供的代码做任何功能、技术上的修改，感谢jmontleon和yusefnapora对pixelbook使用linux所作出的努力和杰出贡献！"
 在manjaro的修复后工作情况：
     1）.音频--------------正常
     2）.热键映射-----------正常，屏幕背光调节无效果
     3）.触摸板-------------正常
     4）.键盘背光-----------正常
 1. 从 https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin放置在当前用户根目录下
-2. git clone https://github.com/hqzfj/pixelbook ，确保文件夹名为pixelbook
-3. chmod +x ./pixelbook/install.sh
-4. ./pixelbook/install.sh运行脚本
+
+2. 克隆到本地用户根目录
+
+git clone https://github.com/hqzfj/pixelbook 
+
+确保文件夹名为pixelbook
+3. 给予运行权限
+
+chmod +x ./pixelbook/install.sh
+
+4.运行脚本
+
+ ./pixelbook/install.sh
+ 
 #脚本结构选择项
 1) 音频------------对应调用运行audio.sh脚本文件
 2) 热键------------对应调用运行hotkeys.sh脚本文件
