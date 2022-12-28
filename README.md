@@ -24,14 +24,14 @@
 #适用于pixelbook安装manjaro的修复脚本，也可能适用于ubuntu/debian/mint/deepin/fedora等发行版本
 此脚本只在manjaro发行版上测试成功，不保证其他发行版能够成功修复，不过应该问题不大。此脚本根据jmontleon的gihub发布页(https://github.com/jmontleon/pixelbook-fedora )及yusefnapora的gihub发布页(https://github.com/yusefnapora/pixelbook-linux )的方法步骤编写。因非计算机专业，能力有限，此脚本只为方便本人在其他发行版修复，未对以上两位提供的代码做任何功能、技术上的修改，感谢jmontleon和yusefnapora对pixelbook使用linux所作出的努力和杰出贡献！
 
-#在manjaro的修复后工作情况：
+# 在manjaro的修复后工作情况：
 
 1）.音频--------------正常；
 2）.热键映射-----------正常，屏幕背光调节无效果；
 3）.触摸板-------------正常；
 4）.键盘背光-----------正常；
 
-
+# 安装步骤：
 1. 从 https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin放置在当前用户根目录下
 
 2. 克隆到本地用户根目录
@@ -47,14 +47,14 @@
 
        ./pixelbook/install.sh
  
-#脚本结构选择项
+# 脚本结构选择项
 1) 音频------------对应调用运行audio.sh脚本文件
 2) 热键------------对应调用运行hotkeys.sh脚本文件
 3) 触摸板----------对应调用运行touchpad.sh脚本文件
 4) 键盘背光--------对应调用运行keyboard-brightness.sh脚本文件
 5) AER日志---------对应调用运行aer.sh脚本文件
 6) 退出
-#非manjaro发行版的需要注意的地方
+# 非manjaro发行版的需要注意的地方
 1.音频修复时需要安装kpartx软件用于映射挂载谷歌恢复镜像文件和安装xinput软件用于监控输入设备
  audio.sh脚本文件运行时做了判断，manjaro系统为：
  
