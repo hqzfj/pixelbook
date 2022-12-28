@@ -6,7 +6,7 @@ printf %.s- {1..100}
 echo
 
 installapp(){
-echo "安装kpartx用于映射挂载谷歌恢复镜像文件"
+echo "安装kpartx用于映射挂载谷歌恢复镜像文件及xinput、pulseaudio"
 if [ $ID = "manjaro" ] || [ $ID = "Manjaro" ] || [ $ID = "archlinux" ] || [ $ID = "arch linux" ]; then
 sudo pacman -S multipath-tools -y
 sudo pacman -S xorg-xinput -y
