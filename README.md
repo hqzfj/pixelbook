@@ -23,7 +23,8 @@
 # 修复脚本
    适用于pixelbook安装manjaro的修复脚本，也可能适用于ubuntu/debian/mint/deepin/fedora等发行版本
 此脚本只在manjaro发行版上测试成功，不保证其他发行版能够成功修复，不过应该问题不大。此脚本根据jmontleon的gihub发布页(https://github.com/jmontleon/pixelbook-fedora )及yusefnapora的gihub发布页(https://github.com/yusefnapora/pixelbook-linux )的方法步骤编写。因非计算机专业，能力有限，此脚本只为方便本人在其他发行版修复，未对以上两位提供的代码做任何功能、技术上的修改，感谢jmontleon和yusefnapora对pixelbook使用linux所作出的努力和杰出贡献！
-   此脚本未对fedora发行版修复，您的系统若为fedora，请移步至jmontleon的gihub发布页(https://github.com/jmontleon/pixelbook-fedora)，并按他说明的方法、步骤进行修复。
+
+   此脚本未对fedora发行版修复，您的系统若为fedora，请移步至jmontleon的gihub发布页( https://github.com/jmontleon/pixelbook-fedora )， 并按他说明的方法、步骤进行修复。
 
 # 在manjaro的修复后工作情况：
 
