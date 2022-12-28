@@ -70,9 +70,9 @@
                       
                       sudo pacman -S xorg-xinput -y
                       
- ##### 非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复：
+ #### 非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复：
    
-  直接下载pixelbook-alsa_1.0-1_amd64.deb软件包并使用sudo dpkg -i命令安装即可。
+         直接下载这里的pixelbook-alsa_1.0-1_amd64.deb（LyncolnMD提供）软件包并使用sudo dpkg -i命令安装即可。
    
  2.热键映射中的屏幕背光需要安装dracut软件，keyboard-brightness.sh脚本文件运行时做了判断，manjaro系统为：
  
