@@ -1,10 +1,12 @@
 #!/bin/bash
 cd
 source /etc/os-release
-echo "您的系统发行版为：$ID，请先将谷歌恢复文件解压成bin文件并拷贝至用户根目录!"
+echo "您的系统发行版为：$ID，你的系统若为manjaro,请先将谷歌恢复文件解压成bin文件并拷贝至用户根目录!"
 printf %.s- {1..100}
 echo
-
+if [ $ID != "manjaro" ] && [ $ID != "Manjaro" ] && [ $ID != "archlinux" ] && [ $ID != "arch linux" ]; then
+echo "你的系统为非manjaro和非archlinux，若为ubuntu、debian或deepin，请直接下载pixelbook-alsa_1.0-1_amd64.deb软件包并使用sudo dpkg -i安装即可，无需进行下一步。"
+else
 installapp(){
 echo "安装kpartx用于映射挂载谷歌恢复镜像文件及xinput、pulseaudio"
 if [ $ID = "manjaro" ] || [ $ID = "Manjaro" ] || [ $ID = "archlinux" ] || [ $ID = "arch linux" ]; then
@@ -76,4 +78,5 @@ case $input in
         exit 1
         ;;
 esac
+fi
 fi
