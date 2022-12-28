@@ -27,12 +27,15 @@
 # 在manjaro的修复后工作情况：
 
 1）.音频--------------正常；
+
 2）.热键映射-----------正常，屏幕背光调节无效果；
+
 3）.触摸板-------------正常；
+
 4）.键盘背光-----------正常；
 
 # 安装步骤：
-1. 从 https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin放置在当前用户根目录下
+1. 从 https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin文件放置在当前用户根目录下
 
 2. 克隆到本地用户根目录
 
