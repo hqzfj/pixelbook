@@ -61,7 +61,7 @@
 5) AER日志---------对应调用运行aer.sh脚本文件
 6) 退出
 ### 非manjaro发行版的需要注意的地方
-1.音频修复时需要安装kpartx软件用于映射挂载谷歌恢复镜像文件和安装xinput软件用于监控输入设备
+1.音频修复时需要安装kpartx软件用于映射挂载谷歌恢复镜像文件和安装xinput软件用于监控输入设备，
  audio.sh脚本文件运行时做了判断，manjaro系统为：
  
                       sudo pacman -S multipath-tools -y
