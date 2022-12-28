@@ -39,7 +39,7 @@
 4）.键盘背光-----------正常；
 
 ### 安装步骤：
-1. 从 https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin文件放置在当前用户根目录下
+1. 从 https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin文件放置在当前用户根目录下(非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复无需下载恢复镜像，直接安装LyncolnMD提供的pixelbook-alsa_1.0-1_amd64.deb即可)
 
 2. 克隆到本地用户根目录
 
