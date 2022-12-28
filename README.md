@@ -24,7 +24,7 @@
    适用于pixelbook安装manjaro的修复脚本，也可能适用于ubuntu/debian/mint/deepin/fedora等发行版本
 此脚本只在manjaro发行版上测试成功，不保证其他发行版能够成功修复，不过应该问题不大。此脚本根据jmontleon的gihub发布页(https://github.com/jmontleon/pixelbook-fedora )及yusefnapora的gihub发布页(https://github.com/yusefnapora/pixelbook-linux )的方法步骤编写自动化脚本而已。因非计算机专业，能力有限，此脚本只为方便本人在其他发行版修复的自动化脚本，未对以上两位提供的代码做任何功能、技术上的修改，感谢jmontleon和yusefnapora对pixelbook使用linux所作出的努力和杰出贡献！
 
-非manjaro和archlinux版本的音频修复参考LyncolnMD（https://www.reddit.com/r/chrultrabook/comments/zpz7xb/linux_on_2017_pixelbook_eve_with_working_audio_on/  ）的方案，感谢LyncolnMD！
+非manjaro和archlinux版本的ubuntu、debian、mint、deepin等系统的音频修复：参考LyncolnMD（https://www.reddit.com/r/chrultrabook/comments/zpz7xb/linux_on_2017_pixelbook_eve_with_working_audio_on/  ）的方案，直接下载 pixelbook-alsa_1.0-1_amd64.deb软件包并使用sudo dpkg -i 命令安装即可，感谢LyncolnMD提供解决方案！
 
    此脚本未对fedora发行版修复，您的系统若为fedora，请移步至jmontleon的gihub发布页( https://github.com/jmontleon/pixelbook-fedora )， 并按他说明的方法、步骤进行修复。
 
@@ -72,7 +72,7 @@
                       
  ### 非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复：
    
-  直接下载直接下载pixelbook-alsa_1.0-1_amd64.deb软件包并使用sudo dpkg -i安装即可。
+  直接下载pixelbook-alsa_1.0-1_amd64.deb软件包并使用sudo dpkg -i命令安装即可。
    
  2.热键映射中的屏幕背光需要安装dracut软件，keyboard-brightness.sh脚本文件运行时做了判断，manjaro系统为：
  
