@@ -4,18 +4,18 @@
 1.在解除保护后（保护螺丝拧下来，拔掉电池线，再装上，螺丝拧回）， ChromeOS启用开发者模式后，
 进入 ChromeOS ，按 Ctrl + Alt + T 进入终端，输入shell 进入 Linux 命令行，执行以下命令：
 
-cd ~
+    cd ~
 
-curl -LO https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
+    curl -LO https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
 
 输入Install/Update UEFI （Full ROM） Firmware这项前的相应序号（安装或更新刷入固件），免责声明，如果同意就请输入 "I ACCEPT"，
 所有提示都输入 y，当需要备份时，插入U盘设备，以完成备份，选择U盘对应的序号进行备份，开始下载固件。
 
 2.当如要还原谷歌chrome os的bios时只需要在任何发行版本的 Linux 终端执行以下一样的命令：
 
-cd ~
+     cd ~
 
-curl -LO https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
+     curl -LO https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
 
 输入Restore Stock Firmware这项前的相应序号，然后会提示你插入装有pixelbook谷歌bios之前备份的U盘，选择备份文件名恢复，恢复原谷歌系统需要制作一个chromeos恢复盘，按相关说明恢复即可。
 
@@ -32,16 +32,16 @@ curl -LO https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
 
 2. 克隆到本地用户根目录
 
-git clone https://github.com/hqzfj/pixelbook 
+       git clone https://github.com/hqzfj/pixelbook 
 
 确保文件夹名为pixelbook
 3. 给予运行权限
 
-chmod +x ./pixelbook/install.sh
+       chmod +x ./pixelbook/install.sh
 
 4.运行脚本
 
- ./pixelbook/install.sh
+       ./pixelbook/install.sh
  
 #脚本结构选择项
 1) 音频------------对应调用运行audio.sh脚本文件
