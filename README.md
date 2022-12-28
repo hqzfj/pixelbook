@@ -1,5 +1,5 @@
 ## pixelbook-manjaro/ubuntu/debian/mint/deepin/fedora
-参考自https://github.com/jmontleon/pixelbook-fedora 、https://www.reddit.com/r/chrultrabook/comments/zpz7xb/linux_on_2017_pixelbook_eve_with_working_audio_on/?newUser=true 、https://github.com/yusefnapora/pixelbook-linux ， 修改适用于其他发行版，非常感谢jmontleon、LyncolnMD、yusefnapora提供解决方案！如有侵权请联系删除。
+参考自https://github.com/jmontleon/pixelbook-fedora 、https://www.reddit.com/r/chrultrabook/comments/zpz7xb/linux_on_2017_pixelbook_eve_with_working_audio_on/ 、https://github.com/yusefnapora/pixelbook-linux ， 修改适用于其他发行版，非常感谢jmontleon、LyncolnMD、yusefnapora提供解决方案！如有侵权请联系删除。
 ### 从谷歌chrome系统刷机到manjaro系统
 1.在解除保护后（保护螺丝拧下来，拔掉电池线，再装上，螺丝拧回）， ChromeOS启用开发者模式后，
 进入 ChromeOS ，按 Ctrl + Alt + T 进入终端，输入shell 进入 Linux 命令行，执行以下命令：
