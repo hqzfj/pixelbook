@@ -1,7 +1,7 @@
 #!/bin/bash
 cd
 source /etc/os-release
-echo "您的系统发行版为：$ID，此脚本只在manjaro发行版上测试成功，不保证其他发行版能够成功修复，不过应该问题不大。此脚本根据jmontleon的gihub发布页(https://github.com/jmontleon/pixelbook-fedora)及yusefnapora的gihub发布页(https://github.com/yusefnapora/pixelbook-linux)的方法步骤编写。因非计算机专业，能力有限，此脚本只为方便本人在其他发行版修复，未对以上两位提供的代码做任何功能、技术上的修改，感谢jmontleon和yusefnapora对pixelbook使用linux所作出的努力和杰出贡献！"
+echo "您的系统发行版为：$ID，此脚本只在manjaro发行版上测试成功，不保证其他发行版能够成功修复，不过应该问题不大。此脚本根据jmontleon的gihub发布页(https://github.com/jmontleon/pixelbook-fedora)及yusefnapora的gihub发布页(https://github.com/yusefnapora/pixelbook-linux)的方法步骤编写。因非计算机专业，能力有限，此脚本只为方便本人在其他发行版修复，未对以上两位提供的代码做任何功能、技术上的修改，感谢jmontleon和yusefnapora对pixelbook使用linux所作出的努力和杰出贡献！对于非manjaro和archlinux版本的ubuntu、debian、mint、deepin等系统的音频修复：参考LyncolnMD（https://www.reddit.com/r/chrultrabook/comments/zpz7xb/linux_on_2017_pixelbook_eve_with_working_audio_on/ ）的方案，直接下载 pixelbook-alsa_1.0-1_amd64.deb软件包并使用sudo dpkg -i 命令安装即可，感谢LyncolnMD提供解决方案！"
 echo "在manjaro的修复后工作情况：
 1.音频----------正常
 2.热键----------按键正常，屏幕背光调节无效果
