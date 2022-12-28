@@ -1,5 +1,5 @@
 ## pixelbook-manjaro/ubuntu/debian/mint/deepin/fedora
-参考自https://github.com/jmontleon/pixelbook-fedora 、 https://github.com/yusefnapora/pixelbook-linux ， 修改适用于其他发行版，非常感谢jmontleon和yusefnapora提供解决方案！如有侵权请联系删除。
+参考自https://github.com/jmontleon/pixelbook-fedora 、https://www.reddit.com/r/chrultrabook/comments/zpz7xb/linux_on_2017_pixelbook_eve_with_working_audio_on/?newUser=true 、https://github.com/yusefnapora/pixelbook-linux ， 修改适用于其他发行版，非常感谢jmontleon、LyncolnMD、yusefnapora提供解决方案！如有侵权请联系删除。
 ### 从谷歌chrome系统刷机到manjaro系统
 1.在解除保护后（保护螺丝拧下来，拔掉电池线，再装上，螺丝拧回）， ChromeOS启用开发者模式后，
 进入 ChromeOS ，按 Ctrl + Alt + T 进入终端，输入shell 进入 Linux 命令行，执行以下命令：
@@ -23,6 +23,8 @@
 ### 修复脚本
    适用于pixelbook安装manjaro的修复脚本，也可能适用于ubuntu/debian/mint/deepin/fedora等发行版本
 此脚本只在manjaro发行版上测试成功，不保证其他发行版能够成功修复，不过应该问题不大。此脚本根据jmontleon的gihub发布页(https://github.com/jmontleon/pixelbook-fedora )及yusefnapora的gihub发布页(https://github.com/yusefnapora/pixelbook-linux )的方法步骤编写自动化脚本而已。因非计算机专业，能力有限，此脚本只为方便本人在其他发行版修复的自动化脚本，未对以上两位提供的代码做任何功能、技术上的修改，感谢jmontleon和yusefnapora对pixelbook使用linux所作出的努力和杰出贡献！
+
+非manjaro和archlinux版本的音频修复参考LyncolnMD（https://www.reddit.com/r/chrultrabook/comments/zpz7xb/linux_on_2017_pixelbook_eve_with_working_audio_on/）的方案，感谢LyncolnMD！
 
    此脚本未对fedora发行版修复，您的系统若为fedora，请移步至jmontleon的gihub发布页( https://github.com/jmontleon/pixelbook-fedora )， 并按他说明的方法、步骤进行修复。
 
@@ -61,19 +63,16 @@
 5) AER日志---------对应调用运行aer.sh脚本文件
 6) 退出
 ### 非manjaro发行版的需要注意的地方
-1.音频修复时需要安装kpartx软件用于映射挂载谷歌恢复镜像文件和安装xinput软件用于监控输入设备，
+1.manjaro的音频修复时需要安装kpartx软件用于映射挂载谷歌恢复镜像文件和安装xinput软件用于监控输入设备，
  audio.sh脚本文件运行时做了判断，manjaro系统为：
  
                       sudo pacman -S multipath-tools -y
                       
                       sudo pacman -S xorg-xinput -y
-   非manjaro系统：
+                      
+ ### 非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复：
    
-                      sudo apt-get -y install kpartx
-                      
-                      sudo apt-get -y install xinput
-                      
-   以上非manjaro系统软件包名若不正确请查询并修改上述两个软件包的安装命令
+  直接下载直接下载pixelbook-alsa_1.0-1_amd64.deb软件包并使用sudo dpkg -i安装即可。
    
  2.热键映射中的屏幕背光需要安装dracut软件，keyboard-brightness.sh脚本文件运行时做了判断，manjaro系统为：
  
