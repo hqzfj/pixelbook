@@ -56,7 +56,7 @@
        ./pixelbook/install.sh
  
 ### 脚本结构选择项
-1) 音频------------对应调用运行audio.sh脚本文件
+1) 音频------------对应调用运行audio.sh脚本文件（ubuntu/mint/debian/deepin等非manjaro系统可能不适用，使用以下直接安装pixelbook-alsa_1.0-1_amd64.deb的方法）
 2) 热键------------对应调用运行hotkeys.sh脚本文件
 3) 触摸板----------对应调用运行touchpad.sh脚本文件
 4) 键盘背光--------对应调用运行keyboard-brightness.sh脚本文件
