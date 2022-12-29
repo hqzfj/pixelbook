@@ -11,14 +11,14 @@ installapp(){
 echo "安装kpartx用于映射挂载谷歌恢复镜像文件及xinput、pulseaudio"
 if [ $ID = "manjaro" ] || [ $ID = "Manjaro" ] || [ $ID = "archlinux" ] || [ $ID = "arch linux" ]; then
 sudo pacman -S multipath-tools -y
-sudo pacman -S xorg-xinput -y
+#sudo pacman -S xorg-xinput -y
 #sudo pacman -S pulseaudio -y
 #sudo pacman -S pulseaudio-alsa pulseaudio-jack
 else
 sudo apt-get -y install kpartx
-sudo apt-get -y install xinput
-sudo apt-get -y install pulseaudio
-sudo apt-get -y install pulseaudio-alsa pulseaudio-jack
+#sudo apt-get -y install xinput
+#sudo apt-get -y install pulseaudio
+#sudo apt-get -y install pulseaudio-alsa pulseaudio-jack
 fi
 
 }
@@ -47,15 +47,15 @@ sudo rm ${HOME}/kbl-r5514-5663-.conf
 cd
 echo "-->修复成功！"
 #pixelbook-acpi,pixelbook-acpi.service
-sudo mkdir -p /usr/libexec/
-sudo mkdir -p /usr/lib/systemd/system/
-sudo cp -p  ${HOME}/pixelbook/configs/pixelbook-acpi.service /usr/lib/systemd/system/
-sudo chmod 0664 /usr/lib/systemd/system/pixelbook-acpi.service
-sudo cp -p  ${HOME}/pixelbook/scripts/pixelbook-acpi /usr/libexec/
-sudo chmod 0775 /usr/libexec/pixelbook-acpi
-sudo systemctl enable --now pixelbook-acpi.service
-sudo systemctl start pixelbook-acpi
-echo "-->完成！"
+#sudo mkdir -p /usr/libexec/
+#sudo mkdir -p /usr/lib/systemd/system/
+#sudo cp -p  ${HOME}/pixelbook/configs/pixelbook-acpi.service /usr/lib/systemd/system/
+#sudo chmod 0664 /usr/lib/systemd/system/pixelbook-acpi.service
+#sudo cp -p  ${HOME}/pixelbook/scripts/pixelbook-acpi /usr/libexec/
+#sudo chmod 0775 /usr/libexec/pixelbook-acpi
+#sudo systemctl enable --now pixelbook-acpi.service
+#sudo systemctl start pixelbook-acpi
+#echo "-->完成！"
 
 }
 read -p "请输入或粘贴已解压后置于根目录下的谷歌恢复镜像文件名（含扩展名‘bin’）:" filesname
