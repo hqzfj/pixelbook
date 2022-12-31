@@ -30,16 +30,16 @@
 
 ### 在manjaro（内核5.15）的修复后工作情况：
 
-1）.音频--------------正常(最新6.1.1-1内核修复无效)；
+1）.音频--------------正常(最新6.1.1-1内核修复无效,建议安装6.0以下内核版本)；
 
-2）.热键映射-----------正常，屏幕背光调节无效果（或许5.17内核版本及以上的有效）；
+2）.热键映射-----------正常，5.15内核版本屏幕背光调节无效果，5.19内核版本有效，建议安装5.19内核版本的manjaro；
 
 3）.触摸板-------------正常；
 
 4）.键盘背光-----------正常；
 
 ### 安装步骤：
-1. 从 https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin文件放置在当前用户根目录下(非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复无需下载恢复镜像，直接安装LyncolnMD提供的pixelbook-alsa_1.0-1_amd64.deb即可)
+1. 若从直接安装deepin-udis86-1.72_4-3-x86_64.pkg.tar.zst软件包修复音频则无需下载谷歌恢复镜像。或从https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin文件放置在当前用户根目录下(非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复无需下载恢复镜像，直接安装LyncolnMD提供的pixelbook-alsa_1.0-1_amd64.deb即可)
 
 2. 克隆到本地用户根目录
 
@@ -56,7 +56,7 @@
        ./pixelbook/install.sh
  
 ### 脚本结构选择项
-1) 音频------------对应调用运行audio.sh脚本文件（ubuntu/mint/debian/deepin等非manjaro系统可能不适用，使用以下直接安装pixelbook-alsa_1.0-1_amd64.deb的方法）
+1) 音频------------直接下载deepin-udis86-1.72_4-3-x86_64.pkg.tar.zst文件安装即可修复音频。或对应调用运行audio.sh脚本文件（ubuntu/mint/debian/deepin等非manjaro系统可能不适用，使用以下直接安装pixelbook-alsa_1.0-1_amd64.deb的方法）
 2) 热键------------对应调用运行hotkeys.sh脚本文件
 3) 触摸板----------对应调用运行touchpad.sh脚本文件
 4) 键盘背光--------对应调用运行keyboard-brightness.sh脚本文件
@@ -66,6 +66,11 @@
 1.manjaro的音频修复时需要安装kpartx软件用于映射挂载谷歌恢复镜像文件和安装xinput软件用于监控输入设备，
  audio.sh脚本文件运行时做了判断，manjaro系统为：
  
+    可直接下载deepin-udis86-1.72_4-3-x86_64.pkg.tar.zst软件包安装修复音频：
+    
+                      sudo pacman -U deepin-udis86-1.72_4-3-x86_64.pkg.tar.zst
+    
+    或者当使用下载谷歌恢复镜像修复音频时：
                       sudo pacman -S multipath-tools -y
                       
                       sudo pacman -S xorg-xinput -y
