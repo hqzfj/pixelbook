@@ -21,12 +21,12 @@ sudo udevadm control --reload-rules
 sudo udevadm trigger
 
 
-echo "安装dracut"
-if [ $ID = "manjaro" ] || [ $ID = "Manjaro" ] || [ $ID = "archlinux" ] || [ $ID = "arch linux" ]; then
-sudo pacman -S dracut -y
-else
-sudo apt-get -y install dracut
-fi
+#echo "安装dracut"
+#if [ $ID = "manjaro" ] || [ $ID = "Manjaro" ] || [ $ID = "archlinux" ] || [ $ID = "arch linux" ]; then
+#sudo pacman -S dracut -y
+#else
+#sudo apt-get -y install dracut
+#fi
 
 echo "options i915 enable_dpcd_backlight=1" >i915.conf
 sudo cp -p  ${HOME}/i915.conf /etc/modprobe.d/
