@@ -28,11 +28,11 @@
 
    此脚本未对fedora发行版修复，您的系统若为fedora，请移步至jmontleon的gihub发布页( https://github.com/jmontleon/pixelbook-fedora )， 并按他说明的方法、步骤进行修复。
 
-### 在manjaro（内核5.15）的修复后工作情况：
+### 在manjaro（内核5.19或最新的版本）的修复后工作情况：
 
-1）.音频--------------正常(最新6.1.1-1内核修复无效,建议安装6.0以下内核版本，建议安装5.19内核版本的manjaro ， https://github.com/manjaro/release-review/releases/tag/202211150747 )；
+1）.音频--------------正常(6.1.1-1内核修复无效,建议安装6.0以下内核版本或最新的内核版本，建议安装5.19内核版本或最新的manjaro版本， https://github.com/manjaro/release-review/releases/tag/202211150747 ，https://manjaro.org/products/download/x86 )；
 
-2）.热键映射-----------正常，5.15内核版本屏幕背光调节无效果，5.19内核版本有效，建议安装5.19内核版本的manjaro
+2）.热键映射-----------正常，5.15内核版本屏幕背光调节无效果，5.19内核版本有效，建议安装5.19内核或最新的manjaro版本
 
 3）.触摸板-------------正常；
 
@@ -71,6 +71,7 @@
                       sudo pacman -U pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst
     
     或者当使用下载谷歌恢复镜像修复音频时：
+                      sudo pacman -Syy
                       sudo pacman -S multipath-tools -y
                       
                       sudo pacman -S xorg-xinput -y
