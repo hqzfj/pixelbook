@@ -31,6 +31,6 @@ sudo udevadm trigger
 echo "options i915 enable_dpcd_backlight=1" >i915.conf
 sudo cp -p  ${HOME}/i915.conf /etc/modprobe.d/
 sudo chmod 0775 /etc/modprobe.d/i915.conf
-sudo dracut -f
+#sudo dracut -f
 sudo rm ${HOME}/i915.conf
 echo "-->修复成功！"
