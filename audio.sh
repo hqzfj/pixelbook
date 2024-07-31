@@ -37,14 +37,22 @@ sudo cp /mnt/opt/google/dsm/dsmparam.bin /opt/google/dsm/dsmparam.bin
 #添加 ucm2 配置文件
 sudo mkdir -p /usr/share/alsa/ucm2/Intel/kbl-r5514-5663-/
 sudo mkdir -p /usr/share/alsa/ucm2/conf.d/kbl-r5514-5663-/
+
+sudo mkdir -p /etc/wireplumber/main.lua.d/
+
 sudo cp -p  ${HOME}/pixelbook/configs/HiFi.conf /usr/share/alsa/ucm2/Intel/kbl-r5514-5663-/
 sudo chmod 0755 /usr/share/alsa/ucm2/Intel/kbl-r5514-5663-/HiFi.conf
 sudo cp -p  ${HOME}/pixelbook/configs/kbl-r5514-5663-.conf /usr/share/alsa/ucm2/Intel/kbl-r5514-5663-/
 sudo chmod 0755 /usr/share/alsa/ucm2/Intel/kbl-r5514-5663-/kbl-r5514-5663-.conf
+
+sudo cp -p  ${HOME}/pixelbook/configs/50-alsa-config.lua /etc/wireplumber/main.lua.d/
+sudo chmod 0755 /etc/wireplumber/main.lua.d/50-alsa-config.lua
+
 cd /usr/share/alsa/ucm2/conf.d/kbl-r5514-5663-/
 sudo ln -sf ../../Intel/kbl-r5514-5663-/kbl-r5514-5663-.conf
 sudo rm ${HOME}/kbl-r5514-5663-.conf
 cd
+
 echo "-->修复成功！"
 #pixelbook-acpi,pixelbook-acpi.service
 #sudo mkdir -p /usr/libexec/
