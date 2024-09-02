@@ -26,4 +26,12 @@ sudo systemctl start pixelbook-display-orientation.service
 sudo systemctl enable --now  pixelbook-touchscreen-click.service
 sudo systemctl start pixelbook-touchscreen-click.service
 
+#pixelbook-acpi,pixelbook-acpi.service
+sudo cp -p  ${HOME}/pixelbook/configs/pixelbook-acpi.service /usr/lib/systemd/system/
+sudo chmod 0664 /usr/lib/systemd/system/pixelbook-acpi.service
+sudo cp -p  ${HOME}/pixelbook/scripts/pixelbook-acpi /usr/libexec/
+sudo chmod 0775 /usr/libexec/pixelbook-acpi
+sudo systemctl enable --now pixelbook-acpi.service
+sudo systemctl start pixelbook-acpi
+sudo systemctl --now enable acpid
 echo "-->修复成功！"
