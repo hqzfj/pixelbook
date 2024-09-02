@@ -1,7 +1,7 @@
 #!/bin/bash
 cd
 source /etc/os-release
-echo "您的系统发行版为：$ID，以下将修复触屏及转屏"
+echo "您的系统发行版为：$ID，先运行修复热键再运行本项，以下将修复触屏及转屏"
 printf %.s- {1..100}
 echo
 
