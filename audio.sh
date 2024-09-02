@@ -65,6 +65,7 @@ sudo cp -p  ${HOME}/pixelbook/scripts/pixelbook-acpi /usr/libexec/
 sudo chmod 0775 /usr/libexec/pixelbook-acpi
 sudo systemctl enable --now pixelbook-acpi.service
 sudo systemctl start pixelbook-acpi
+sudo systemctl --now enable acpid
 echo "-->完成！"
 
 }
