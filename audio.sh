@@ -5,21 +5,22 @@ echo "您的系统发行版为：$ID，你的系统若为manjaro,请先将谷歌
 printf %.s- {1..100}
 echo
 if [ $ID != "manjaro" ] && [ $ID != "Manjaro" ] && [ $ID != "archlinux" ] && [ $ID != "arch linux" ]; then
-echo "你的系统为非manjaro和非archlinux，若为ubuntu、mint、debian或deepin，请直接下载LyncolnMD提供的pixelbook-alsa_1.0-1_amd64.deb软件包并使用sudo dpkg -i安装即可，无需进行下一步。"
-else
+echo "你的系统为非manjaro和非archlinux，若为ubuntu、mint、debian或deepin，请直接下载LyncolnMD提供的pixelbook-alsa_1.0-1_amd64.deb软件包并使用sudo dpkg -i安装即可，或按回车键进行下一步。"
+read
+fi
 installapp(){
 echo "安装kpartx用于映射挂载谷歌恢复镜像文件及xinput、pulseaudio"
 if [ $ID = "manjaro" ] || [ $ID = "Manjaro" ] || [ $ID = "archlinux" ] || [ $ID = "arch linux" ]; then
 sudo pacman -Syy
 sudo pacman -S multipath-tools -y
 #sudo pacman -S xorg-xinput -y
-#sudo pacman -S pulseaudio -y
-#sudo pacman -S pulseaudio-alsa pulseaudio-jack
+sudo pacman -S pulseaudio -y
+sudo pacman -S pulseaudio-alsa pulseaudio-jack
 else
 sudo apt-get -y install kpartx
-#sudo apt-get -y install xinput
-#sudo apt-get -y install pulseaudio
-#sudo apt-get -y install pulseaudio-alsa pulseaudio-jack
+sudo apt-get -y install xinput
+sudo apt-get -y install pulseaudio
+sudo apt-get -y install pulseaudio-alsa pulseaudio-jack
 fi
 
 }
@@ -54,17 +55,17 @@ sudo ln -sf ../../Intel/kbl-r5514-5663-/kbl-r5514-5663-.conf
 sudo rm ${HOME}/kbl-r5514-5663-.conf
 cd
 
-echo "-->修复成功！"
-#pixelbook-acpi,pixelbook-acpi.service
-#sudo mkdir -p /usr/libexec/
-#sudo mkdir -p /usr/lib/systemd/system/
-#sudo cp -p  ${HOME}/pixelbook/configs/pixelbook-acpi.service /usr/lib/systemd/system/
-#sudo chmod 0664 /usr/lib/systemd/system/pixelbook-acpi.service
-#sudo cp -p  ${HOME}/pixelbook/scripts/pixelbook-acpi /usr/libexec/
-#sudo chmod 0775 /usr/libexec/pixelbook-acpi
-#sudo systemctl enable --now pixelbook-acpi.service
-#sudo systemctl start pixelbook-acpi
-#echo "-->完成！"
+#echo "-->修复成功！"
+pixelbook-acpi,pixelbook-acpi.service
+sudo mkdir -p /usr/libexec/
+sudo mkdir -p /usr/lib/systemd/system/
+sudo cp -p  ${HOME}/pixelbook/configs/pixelbook-acpi.service /usr/lib/systemd/system/
+sudo chmod 0664 /usr/lib/systemd/system/pixelbook-acpi.service
+sudo cp -p  ${HOME}/pixelbook/scripts/pixelbook-acpi /usr/libexec/
+sudo chmod 0775 /usr/libexec/pixelbook-acpi
+sudo systemctl enable --now pixelbook-acpi.service
+sudo systemctl start pixelbook-acpi
+echo "-->完成！"
 
 }
 read -p "请输入或粘贴已解压后置于根目录下的谷歌恢复镜像文件名（含扩展名‘bin’）:" filesname
@@ -88,4 +89,4 @@ case $input in
         ;;
 esac
 fi
-fi
+
