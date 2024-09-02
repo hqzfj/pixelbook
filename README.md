@@ -2,7 +2,7 @@
 参考自https://github.com/jmontleon/pixelbook-fedora 、https://www.reddit.com/r/chrultrabook/comments/zpz7xb/linux_on_2017_pixelbook_eve_with_working_audio_on/ 、https://github.com/yusefnapora/pixelbook-linux ， 修改适用于其他发行版，非常感谢jmontleon、LyncolnMD、yusefnapora提供解决方案！如有侵权请联系删除。
 ### 从谷歌chrome系统刷机到manjaro系统
 1.在解除保护后（保护螺丝拧下来，拔掉电池线，再装上，螺丝拧回）， ChromeOS启用开发者模式后，
-进入 ChromeOS ，按 Ctrl + Alt + T 进入终端，输入shell 进入 Linux 命令行，执行以下命令：
+进入 ChromeOS ，按 Ctrl + Alt + T 进入终端，输入shell 进入 Linux 命令行，执行以下命令（117版本之前的ChromeOS），117版本以后的按 Ctrl + Alt + 刷新键 进入VT-2终端并输入 chronos 账户 密码为空：
 
     cd ~
 
@@ -30,9 +30,9 @@
 
 ### 在manjaro（内核5.19或最新的版本）的修复后工作情况：
 
-1）.音频--------------正常(6.1.1-1内核修复无效,建议安装6.0以下内核版本或最新的内核版本，建议安装5.19内核版本或最新的manjaro版本， https://github.com/manjaro/release-review/releases/tag/202211150747 ，https://manjaro.org/products/download/x86 )；
+1）.音频--------------正常(6.1.1-1内核修复无效,建议安装6.0以下内核版本或最新的内核版本，建议安装最新的manjaro版本，https://manjaro.org/products/download/x86 )；
 
-2）.热键映射-----------正常，5.15内核版本屏幕背光调节无效果，5.19内核版本有效，建议安装5.19内核或最新的manjaro版本
+2）.热键映射-----------正常，5.15内核版本屏幕背光调节无效果，5.19内核版本有效，最新的6.6内核及以上的manjaro版本有效
 
 3）.触摸板-------------正常；
 
@@ -56,7 +56,7 @@
        ./pixelbook/install.sh
  
 ### 脚本结构选择项
-1) 音频------------直接下载pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst文件安装即可修复音频。或对应调用运行audio.sh脚本文件（ubuntu/mint/debian/deepin等非manjaro系统可能不适用，使用以下直接安装pixelbook-alsa_1.0-1_amd64.deb的方法）
+1) 音频------------直接下载pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst文件安装即可修复音频。或对应调用运行audio.sh脚本文件。
 2) 热键------------对应调用运行hotkeys.sh脚本文件
 3) 触摸板----------对应调用运行touchpad.sh脚本文件
 4) 键盘背光--------对应调用运行keyboard-brightness.sh脚本文件
