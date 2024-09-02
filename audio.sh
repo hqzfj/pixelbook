@@ -56,7 +56,7 @@ sudo rm ${HOME}/kbl-r5514-5663-.conf
 cd
 
 #echo "-->修复成功！"
-pixelbook-acpi,pixelbook-acpi.service
+#pixelbook-acpi,pixelbook-acpi.service
 sudo mkdir -p /usr/libexec/
 sudo mkdir -p /usr/lib/systemd/system/
 sudo cp -p  ${HOME}/pixelbook/configs/pixelbook-acpi.service /usr/lib/systemd/system/
