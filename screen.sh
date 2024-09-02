@@ -34,4 +34,6 @@ sudo chmod 0775 /usr/libexec/pixelbook-acpi
 sudo systemctl enable --now pixelbook-acpi.service
 sudo systemctl start pixelbook-acpi
 sudo systemctl --now enable acpid
+sudo usermod -aG input $USER
+sudo usermod -aG tty $USER
 echo "-->修复成功！"
