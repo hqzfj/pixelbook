@@ -4,7 +4,8 @@
 # Special keyboard mapping for Eve project. The keyboard has extra
 # "Assistant" and "Hamburger" keys.
 #
-evdev:atkbd:dmi:bvn*:bvr*:bd*:svnGoogle:pnEve:pvr*
+evdev:atkbd:dmi:bvn*:svnGoogle:pnAtlas:pvr*
+ KEYBOARD_KEY_db=leftmeta
  KEYBOARD_KEY_5d=delete
  KEYBOARD_KEY_d8=rightmeta
  KEYBOARD_KEY_db=capslock
