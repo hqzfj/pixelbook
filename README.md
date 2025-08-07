@@ -56,7 +56,7 @@
        ./pixelbook/install.sh
  
 ### 脚本结构选择项
-1) 音频------------直接下载pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst文件安装即可修复音频。或对应调用运行audio.sh脚本文件。
+1) 音频------------直接下载pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst文件安装即可修复音频。或对应调用运行audio.sh脚本文件，Linux6.12内核版本不适用，需要安装python 3.10后运行setup-audio修复音频。
 2) 热键------------对应调用运行hotkeys.sh脚本文件
 3) 触摸板----------对应调用运行touchpad.sh脚本文件
 4) 键盘背光--------对应调用运行keyboard-brightness.sh脚本文件
