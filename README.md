@@ -62,21 +62,21 @@
 4) 键盘背光--------对应调用运行keyboard-brightness.sh脚本文件
 5) AER日志---------对应调用运行aer.sh脚本文件
 6) 退出
-### 非manjaro发行版的需要注意的地方
+### 非manjaro发行版的需要注意的地方，Linux6.12内核版本不适用。
 1.manjaro的音频修复时需要安装kpartx软件用于映射挂载谷歌恢复镜像文件和安装xinput软件用于监控输入设备，
- audio.sh脚本文件运行时做了判断，manjaro系统为：Linux6.12内核版本不适用。
+ audio.sh脚本文件运行时做了判断，manjaro系统为：
  
     可直接下载pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst软件包安装修复音频：
     
                       sudo pacman -U pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst
     
-    或者当使用下载谷歌恢复镜像修复音频时：Linux6.12内核版本不适用。
+    或者当使用下载谷歌恢复镜像修复音频时：
                       sudo pacman -Syy
                       sudo pacman -S multipath-tools -y
                       
                       sudo pacman -S xorg-xinput -y
                       
- #### 非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复：
+ #### 非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复：Linux6.12内核版本不适用。
    
     直接下载这里的pixelbook-alsa_1.0-1_amd64.deb（LyncolnMD提供）软件包并使用sudo dpkg -i命令安装即可。
    
