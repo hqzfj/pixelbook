@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+import sys
+from functions import *
+
+# parse arguments from the cli. Only for testing/advanced use.
+def process_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-b", dest="board_name", type=str, nargs=1, default=[""],
+                        help="Override board name.")
+    parser.add_argument("--enable-debug", action='store_const', const="Enabling", dest="debug",
+                        help="Enable audio debugging.")
+    parser.add_argument("--disable-debug", action='store_const', const="Disabling", dest="debug",
+                        help="Disable audio debugging.")
+    parser.add_argument("--force-avs-install", action="store_true", dest="force_avs_install", default=False,
+                        help="DANGEROUS: Force enable AVS install. MIGHT CAUSE PERMANENT DAMAGE TO SPEAKERS!")
+    parser.add_argument("--branch", dest="branch_name", type=str, nargs=1, default=["standalone"],
+                        help="Use a different branch when cloning ucm. FOR DEVS AND TESTERS ONLY!")
+    return parser.parse_args()
+
+if __name__ == "__main__":
+    check_nix()
+    check_arch()
+    args = process_args()
+
+    # Restart script as root
+    if os.geteuid() != 0:
+        # make the two people that use doas happy
+        if path_exists("/usr/bin/doas"):
+            doas_args = ['doas', sys.executable] + sys.argv + [os.environ]
+            os.execlpe('doas', *doas_args)
+        # other 99 percent of linux users
+        sudo_args = ['sudo', sys.executable] + sys.argv + [os.environ]
+        os.execlpe('sudo', *sudo_args)
+
+    # Some distros (Solus) don't have /etc/modprobe.d/ for some reason
+    mkdir("/etc/modprobe.d", create_parents=True)
+
+    # Platform specific configuration
+    platform = get_platform()
+    platform_config(platform, args)
+
+    # Install downstream UCM configuration
+    install_ucm(args.branch_name[0])
+
+    # Check currently running kernel for all required modules
+    check_kernel_config(platform)
+
+    # Install wireplumber config to increase headroom
+    # fixes instability and crashes on various devices
+    if path_exists("/usr/bin/wireplumber"):
+        print_header("Increasing alsa headroom (fixes instability)")
+        mkdir("/etc/wireplumber/wireplumber.conf.d/", create_parents=True)
+        cpfile("conf/common/51-increase-headroom.conf", "/etc/wireplumber/wireplumber.conf.d/51-increase-headroom.conf")
+
+    # Sometimes the alsa save/restore service doesn't init the sound card for some reason, so do it here instead
+    # This won't work for soundcards which don't currently exist, such as ones that need firmware installed
+    # by this script, but those aren't known to have this issue
+    # the ; true is there because that command will return a non-zero value for some reason
+    print_status("Initializing sound card")
+    bash("alsactl init; true")
+
+    print_status("Audio setup finished! Reboot to complete setup.")
+    print_status("If you still have any issues post-reboot, report them to https://github.com/WeirdTreeThing/chromebook-linux-audio")
+    print_status("If this script has been helpful for you and you would like to support the work I do, consider donating to https://paypal.me/weirdtreething")
