@@ -53,7 +53,7 @@ if __name__ == "__main__":
     if path_exists("/usr/bin/wireplumber"):
         print_header("Increasing alsa headroom (fixes instability)")
         mkdir("/etc/wireplumber/wireplumber.conf.d/", create_parents=True)
-        cpfile("conf/common/51-increase-headroom.conf", "/etc/wireplumber/wireplumber.conf.d/51-increase-headroom.conf")
+        cpfile("./pixelbook/conf/common/51-increase-headroom.conf", "/etc/wireplumber/wireplumber.conf.d/51-increase-headroom.conf")
 
     # Sometimes the alsa save/restore service doesn't init the sound card for some reason, so do it here instead
     # This won't work for soundcards which don't currently exist, such as ones that need firmware installed
