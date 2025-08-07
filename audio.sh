@@ -35,11 +35,11 @@ sudo cp /mnt/lib/firmware/intel/dsp_fw_C75061F3-F2B2-4DCC-8F9F-82ABB4131E66.bin 
 sudo mkdir -p /opt/google/dsm/
 sudo cp /mnt/opt/google/dsm/dsmparam.bin /opt/google/dsm/dsmparam.bin
 
-#添加 ucm2 配置文件
+#添加 pixelbook-alsa-ucm
 sudo mkdir -p /usr/share/alsa/ucm2/Intel/kbl-r5514-5663-/
 sudo mkdir -p /usr/share/alsa/ucm2/conf.d/kbl-r5514-5663-/
 
-sudo mkdir -p /etc/wireplumber/main.lua.d/
+sudo mkdir -p /etc/wireplumber/wireplumber.conf.d/
 
 sudo cp -p  ${HOME}/pixelbook/configs/HiFi.conf /usr/share/alsa/ucm2/Intel/kbl-r5514-5663-/
 sudo chmod 0755 /usr/share/alsa/ucm2/Intel/kbl-r5514-5663-/HiFi.conf
