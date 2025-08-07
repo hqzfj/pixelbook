@@ -39,7 +39,7 @@
 4）.键盘背光-----------正常；
 
 ### 安装步骤：
-1. 若从直接安装pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst软件包修复音频则无需下载谷歌恢复镜像。或从https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin文件放置在当前用户根目录下(非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复无需下载恢复镜像，直接安装LyncolnMD提供的pixelbook-alsa_1.0-1_amd64.deb即可)，Linux6.12内核版本不适用。
+1. 若从直接安装pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst软件包修复音频则无需下载谷歌恢复镜像。或从https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin文件放置在当前用户根目录下(非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复无需下载恢复镜像，直接安装LyncolnMD提供的pixelbook-alsa_1.0-1_amd64.deb即可)，Linux6.12内核版本不适用，需要安装python 3.10后运行setup-audio修复音频。
 
 2. 克隆到本地用户根目录
 
