@@ -46,8 +46,11 @@ sudo chmod 0755 /usr/share/alsa/ucm2/Intel/kbl-r5514-5663-/HiFi.conf
 sudo cp -p  ${HOME}/pixelbook/configs/kbl-r5514-5663-.conf /usr/share/alsa/ucm2/Intel/kbl-r5514-5663-/
 sudo chmod 0755 /usr/share/alsa/ucm2/Intel/kbl-r5514-5663-/kbl-r5514-5663-.conf
 
-sudo cp -p  ${HOME}/pixelbook/configs/50-alsa-config.lua /etc/wireplumber/main.lua.d/
-sudo chmod 0755 /etc/wireplumber/main.lua.d/50-alsa-config.lua
+#sudo cp -p  ${HOME}/pixelbook/configs/50-alsa-config.lua /etc/wireplumber/main.lua.d/
+#sudo chmod 0755 /etc/wireplumber/main.lua.d/50-alsa-config.lua
+
+sudo cp -p  ${HOME}/pixelbook/configs/50-alsa-config.conf /etc/wireplumber/wireplumber.conf.d/
+sudo chmod 0755 /etc/wireplumber/wireplumber.conf.d/50-alsa-config.conf
 
 cd /usr/share/alsa/ucm2/conf.d/kbl-r5514-5663-/
 sudo ln -sf ../../Intel/kbl-r5514-5663-/kbl-r5514-5663-.conf
