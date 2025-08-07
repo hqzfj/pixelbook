@@ -497,12 +497,12 @@ def get_codecs():
 
 def install_ucm(branch):
     print_header("Installing UCM configuration")
-    try:
-        bash("rm -rf /tmp/alsa-ucm-conf-cros")
-        bash(f"git clone https://github.com/WeirdTreeThing/alsa-ucm-conf-cros -b {branch} /tmp/alsa-ucm-conf-cros")
-    except:
-        print_error("Error: Failed to clone UCM repo")
-        exit(1)
+   # try:
+       # bash("rm -rf /tmp/alsa-ucm-conf-cros")
+      #  bash(f"git clone https://github.com/WeirdTreeThing/alsa-ucm-conf-cros -b {branch} /tmp/alsa-ucm-conf-cros")
+   # except:
+      #  print_error("Error: Failed to clone UCM repo")
+      #  exit(1)
 
-    cpdir("/tmp/alsa-ucm-conf-cros/ucm2", "/usr/share/alsa/ucm2/")
-    cpdir("/tmp/alsa-ucm-conf-cros/overrides", "/usr/share/alsa/ucm2/conf.d")
+    cpdir("${HOME}/pixelbook/alsa-ucm-conf-cros/ucm2", "/usr/share/alsa/ucm2/")
+    cpdir("${HOME}/pixelbook/alsa-ucm-conf-cros/overrides", "/usr/share/alsa/ucm2/conf.d")
