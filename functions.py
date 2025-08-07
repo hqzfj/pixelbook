@@ -260,8 +260,8 @@ def mdn_config():
     print_header("Installing MDN SOF firmware")
     mkdir("/lib/firmware/amd/sof/community", create_parents=True)
     mkdir("/lib/firmware/amd/sof-tplg", create_parents=True)
-    cpdir("pixelbook/blobs/mdn/fw", "/lib/firmware/amd/sof/community")
-    cpdir("pixelbook/blobs/mdn/tplg", "/lib/firmware/amd/sof-tplg")
+    cpdir("${HOME}/pixelbook/blobs/mdn/fw", "/lib/firmware/amd/sof/community")
+    cpdir("${HOME}/pixelbook/blobs/mdn/tplg", "/lib/firmware/amd/sof-tplg")
 
 def st_warning():
     print_warning("WARNING: Audio on AMD StoneyRidge Chromebooks requires a patched kernel.")
@@ -296,7 +296,7 @@ def avs_config(args):
     print_header("Installing topology")
     mkdir("/tmp/avs_tplg")
     avs_tplg_ver = "2024.02"
-    bash(f"tar xf ./pixelbook//blobs/avs-topology_{avs_tplg_ver}.tar.gz -C /tmp/avs_tplg")
+    bash(f"tar xf ${HOME}/pixelbook//blobs/avs-topology_{avs_tplg_ver}.tar.gz -C /tmp/avs_tplg")
     mkdir("/lib/firmware/intel/avs", create_parents=True)
     cpdir("/tmp/avs_tplg/avs-topology/lib/firmware/intel/avs", "/lib/firmware/intel/avs")
 
@@ -332,11 +332,11 @@ def adl_sof_config():
 
 def mtl_sof_config():
     print_header("Enabling SOF driver")
-    cpfile("pixelbook/conf/sof/mtl-sof.conf", "/etc/modprobe.d/mtl-sof.conf")
+    cpfile("${HOME}/pixelbook/conf/sof/mtl-sof.conf", "/etc/modprobe.d/mtl-sof.conf")
 
 def hifi2_sof_config():
     print_header("Forcing SOF driver in debug mode")
-    cpfile("pixelbook/conf/sof/hifi2-sof.conf", "/etc/modprobe.d/hifi2-sof.conf")
+    cpfile("${HOME}/pixelbook/conf/sof/hifi2-sof.conf", "/etc/modprobe.d/hifi2-sof.conf")
 
 #######################################################################################
 #                                   GENERAL FUNCTIONS                                 #
