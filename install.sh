@@ -31,8 +31,8 @@ select fav in "${lis[@]}"; do
     case $fav in
         "音频")
             echo "开始修复$fav..."
-            chmod +x ${HOME}/pixelbook/audio.sh
-            ${HOME}/pixelbook/audio.sh
+            chmod +x ${HOME}/pixelbook/setup-audio
+            ${HOME}/pixelbook/setup-audio
             selectls
             ;;
         "热键")
