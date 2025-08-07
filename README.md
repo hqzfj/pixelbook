@@ -1,5 +1,5 @@
 ## pixelbook-manjaro/ubuntu/debian/mint/deepin/fedora
-参考自https://github.com/jmontleon/pixelbook-fedora 、https://www.reddit.com/r/chrultrabook/comments/zpz7xb/linux_on_2017_pixelbook_eve_with_working_audio_on/ 、https://github.com/yusefnapora/pixelbook-linux ， 修改适用于其他发行版，非常感谢jmontleon、LyncolnMD、yusefnapora提供解决方案！如有侵权请联系删除。
+参考自https://github.com/jmontleon/pixelbook-fedora 、https://github.com/WeirdTreeThing/chromebook-linux-audio 、https://github.com/yusefnapora/pixelbook-linux ， 修改适用于其他发行版，非常感谢jmontleon、WeirdTreeThing、LyncolnMD、yusefnapora提供解决方案！如有侵权请联系删除。
 ### 从谷歌chrome系统刷机到manjaro系统
 1.在解除保护后（保护螺丝拧下来，拔掉电池线，再装上，螺丝拧回）， ChromeOS启用开发者模式后，
 进入 ChromeOS ，按 Ctrl + Alt + T 进入终端，输入shell 进入 Linux 命令行，执行以下命令（117版本之前的ChromeOS），117版本以后的按 Ctrl + Alt + 刷新键 进入VT-2终端并输入 chronos 账户 密码为空：
@@ -39,7 +39,7 @@
 4）.键盘背光-----------正常；
 
 ### 安装步骤：
-1. 若从直接安装pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst软件包修复音频则无需下载谷歌恢复镜像。或从https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin文件放置在当前用户根目录下(非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复无需下载恢复镜像，直接安装LyncolnMD提供的pixelbook-alsa_1.0-1_amd64.deb即可)
+1. 若从直接安装pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst软件包修复音频则无需下载谷歌恢复镜像。或从https://chromiumdash.appspot.com/serving-builds?deviceCategory=Chrome%20OS 下载最新的eve恢复镜像，并解压后将bin文件放置在当前用户根目录下(非manjaro和archlinux系统如ubuntu、debian、mint、deepin等的音频修复无需下载恢复镜像，直接安装LyncolnMD提供的pixelbook-alsa_1.0-1_amd64.deb即可)，Linux6.12内核版本不适用。
 
 2. 克隆到本地用户根目录
 
@@ -64,13 +64,13 @@
 6) 退出
 ### 非manjaro发行版的需要注意的地方
 1.manjaro的音频修复时需要安装kpartx软件用于映射挂载谷歌恢复镜像文件和安装xinput软件用于监控输入设备，
- audio.sh脚本文件运行时做了判断，manjaro系统为：
+ audio.sh脚本文件运行时做了判断，manjaro系统为：Linux6.12内核版本不适用。
  
     可直接下载pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst软件包安装修复音频：
     
                       sudo pacman -U pixelbook-alsa-1.0-1-x86_64.pkg.tar.zst
     
-    或者当使用下载谷歌恢复镜像修复音频时：
+    或者当使用下载谷歌恢复镜像修复音频时：Linux6.12内核版本不适用。
                       sudo pacman -Syy
                       sudo pacman -S multipath-tools -y
                       
